@@ -24,6 +24,7 @@ let seattlestore = {
   max: 65,
   avg: 6.3,
   SEAcookiessoldphr: [],
+  dailytotal: 0,
 
   getNumberOfRandomcustomersphr: function () {
     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
@@ -43,6 +44,9 @@ let seattlestore = {
     let cookiessoldthishour = Math.ceil(seattcustomers * this.avg); 
    // console.log(cookiessoldthishour);
     this.SEAcookiessoldphr.push(cookiessoldthishour);
+
+    // calculating the sum of these hourly totals
+    this.dailytotal += cookiessoldthishour
     
 
   //let seacookieavg = Math.ceil (seattcustomers * this.avg)
@@ -82,6 +86,12 @@ liElement.textContent = `${hour[i]}; ${this.SEAcookiessoldphr[i]} cookies`;
 // append
 ulElement.appendChild(liElement);
  }
+ // create
+ //content
+ // append it to dom
+ let totallielement = document.createElement('li');
+ totallielement.textContent = `Total; ${this.dailytotal} cookies`
+ ulElement.appendChild(totallielement);
  }
 }
 
