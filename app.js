@@ -71,7 +71,7 @@ let seattlestore = {
   let salescontainer = document.getElementById('seattlesales'); 
   let h2element = document.createElement('h2');
 
-  h2element.textContent = 'seattlestore'
+  h2element.textContent = 'seattlesales'
 salescontainer.appendChild(h2element)
  
 
@@ -143,74 +143,167 @@ let tokyostore = {
   avg: 1.2,
   Tokcookiessoldphr: [],
   dailytotal: 0,
+
   getNumberOfRandomcustomersphr: function () {
-    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min)
+    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
   },
 
   calculatecookiessoldphr: function() {
-    // method? calculate and store the simulated amounts of cookies purchased
-    // each hour at each location
+  // method? calculate and store the simulated amounts of cookies purchased
+  // each hour at each location
+  
+  // using average cookies ourchased
+  // and the random number of customers
+  for (let i = 0; i < hour.length; i++) {
     
-    // using average cookies ourchased
-    // and the random number of customers 
-    for (let i = 0; i < hour.length; i++) {
+    let tokyocustomers = this.getNumberOfRandomcustomersphr();
+    //console.log(seattcustomers)
+    
+    let cookiessoldthishour = Math.ceil(tokyocustomers * this.avg); 
+   // console.log(cookiessoldthishour);
+    this.Tokcookiessoldphr.push(cookiessoldthishour);
 
-      let tokyocustomers = this.getNumberOfRandomcustomersphr();
+    // calculating the sum of these hourly totals
+    this.dailytotal += cookiessoldthishour
+    
 
-      let cookiessoldthishour = Math.ceil(tokyocustomers * this.avg); 
- // console.log(cookiessoldthishour);
-  this.Tokcookiessoldphr.push(cookiessoldthishour);
+  //let seacookieavg = Math.ceil (seattcustomers * this.avg)
+  //console.log(seaAvgphr)
+  
+  //this.SEAcookiessoldphr.push(seaAvgphr)
 
-  // calculating the sum of these hourly totals
-  this.dailytotal += cookiessoldthishour
-    }
-    console.log(this.Tokcookiessoldphr);
-  },
-  render: function() {
-    this.calculatecookiessoldphr();
-   
-    let salescontainer = document.getElementById('seattlesales'); 
-   
-  
-    let ulElement = document.createElement('ul');
-    console.log(salescontainer);
-   
-    salescontainer.appendChild(ulElement);
-  
-    for (let i = 0; i < hour.length; i++) {
-  
-   //create
-    let liElement = document.createElement('li');
-  // content
-  liElement.textContent = `${hour[i]}; ${this.Tokcookiessoldphr[i]} cookies`;
-  
-  // append
-  ulElement.appendChild(liElement);
-   }
-   // create
-   //content
-   // append it to dom
-   let totallielement = document.createElement('li');
-   totallielement.textContent = `Total; ${this.dailytotal} cookies`
-   ulElement.appendChild(totallielement);
-   }
+  // calculating the sum of these hourly rates
+  // x = x +1 
+  //x += 1 
+  //this.dailytotal += seacookieavg;
+
+  //console.log(this.SEAcookiessoldphr);
+  //     console.log(calculatecookiessoldphr[i]);
+  //    let numbersofcustomers = this.getNumberOfRandomcustomersphr()
   }
-  
- tokyostore.calculatecookiessoldphr();
-tokyostore.render();
-console.log(tokyostore.getNumberOfRandomcustomersphr());
-// console.log(tokyostore.getNumberOfRandomcustomersphr());
+  console.log(this. Tokcookiessoldphr);
+ },
+ render: function() {
+  this.calculatecookiessoldphr();
+ 
+  let salescontainer = document.getElementById('tokyosales'); 
+  let h2element = document.createElement('h2');
 
-// let dubaiStore = {
-//   NameLoc: 'Dubai',
-//   min: 11,
-//   max: 38,
-//   avg: 2.3,
-//   getNumberOfRandomcustomersphr() {
-//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min)
-//   }
-// }
-// console.log(dubaiStore.getNumberOfRandomcustomersphr());
+  h2element.textContent = 'tokyosales'
+salescontainer.appendChild(h2element)
+ 
+
+  let ulElement = document.createElement('ul');
+  console.log(salescontainer);
+ 
+  salescontainer.appendChild(ulElement);
+
+  for (let i = 0; i < hour.length; i++) {
+
+ //create
+  let liElement = document.createElement('li');
+// content
+liElement.textContent = `${hour[i]}; ${this.Tokcookiessoldphr[i]} cookies`;
+
+// append
+ulElement.appendChild(liElement);
+ }
+ // create
+ //content
+ // append it to dom
+ let totallielement = document.createElement('li');
+ totallielement.textContent = `Total; ${this.dailytotal} cookies`
+ ulElement.appendChild(totallielement);
+ }
+}
+
+tokyostore.calculatecookiessoldphr();
+tokyostore.render();
+
+
+let dubaiStore = {
+  NameLoc: 'Dubai',
+  min: 11,
+  max: 38,
+  avg: 2.3,
+ Dubcookiessoldphr: [],
+  dailytotal: 0,
+
+  getNumberOfRandomcustomersphr: function () {
+    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+  },
+
+  calculatecookiessoldphr: function() {
+  // method? calculate and store the simulated amounts of cookies purchased
+  // each hour at each location
+  
+  // using average cookies ourchased
+  // and the random number of customers
+  for (let i = 0; i < hour.length; i++) {
+    
+    let Dubcustomers = this.getNumberOfRandomcustomersphr();
+    //console.log(seattcustomers)
+    
+    let cookiessoldthishour = Math.ceil(Dubcustomers * this.avg); 
+   // console.log(cookiessoldthishour);
+    this.Dubcookiessoldphr.push(cookiessoldthishour);
+
+    // calculating the sum of these hourly totals
+    this.dailytotal += cookiessoldthishour
+    
+
+  //let seacookieavg = Math.ceil (seattcustomers * this.avg)
+  //console.log(seaAvgphr)
+  
+  //this.SEAcookiessoldphr.push(seaAvgphr)
+
+  // calculating the sum of these hourly rates
+  // x = x +1 
+  //x += 1 
+  //this.dailytotal += seacookieavg;
+
+  //console.log(this.SEAcookiessoldphr);
+  //     console.log(calculatecookiessoldphr[i]);
+  //    let numbersofcustomers = this.getNumberOfRandomcustomersphr()
+  }
+  console.log(this. Dubcookiessoldphr);
+ },
+ render: function() {
+  this.calculatecookiessoldphr();
+ 
+  let salescontainer = document.getElementById('dubai'); 
+  let h2element = document.createElement('h2');
+
+  h2element.textContent = 'dubaisales'
+salescontainer.appendChild(h2element)
+ 
+
+  let ulElement = document.createElement('ul');
+  console.log(salescontainer);
+ 
+  salescontainer.appendChild(ulElement);
+
+  for (let i = 0; i < hour.length; i++) {
+
+ //create
+  let liElement = document.createElement('li');
+// content
+liElement.textContent = `${hour[i]}; ${this.Dubcookiessoldphr[i]} cookies`;
+
+// append
+ulElement.appendChild(liElement);
+ }
+ // create
+ //content
+ // append it to dom
+ let totallielement = document.createElement('li');
+ totallielement.textContent = `Total; ${this.dailytotal} cookies`
+ ulElement.appendChild(totallielement);
+ }
+}
+
+dubaiStore.calculatecookiessoldphr();
+dubaiStore.render();
 
 // let parisstore = {
 //   min: 20,

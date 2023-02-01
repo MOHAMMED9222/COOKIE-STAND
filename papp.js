@@ -15,8 +15,3 @@ function seattlestore() {
   this.dailytotal
 }
 
-
-
-
-
-
