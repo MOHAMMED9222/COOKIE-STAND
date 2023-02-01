@@ -69,6 +69,10 @@ let seattlestore = {
   this.calculatecookiessoldphr();
  
   let salescontainer = document.getElementById('seattlesales'); 
+  let h2element = document.createElement('h2');
+
+  h2element.textContent = 'seattlestore'
+salescontainer.appendChild(h2element)
  
 
   let ulElement = document.createElement('ul');
