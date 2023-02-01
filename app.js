@@ -132,15 +132,69 @@ seattlestore.render();
 
 // console.log(seattlestore.getNumberOfRandomcustomersphr());
 
-// let tokyostore = {
-//   NameLoc: 'Tokyo',
-//   min: 3,
-//   max: 24,
-//   avg: 1.2,
-//   getNumberOfRandomcustomersphr: function () {
-//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min)
-//   }
-// }
+let tokyostore = {
+  NameLoc: 'Tokyo',
+  min: 3,
+  max: 24,
+  avg: 1.2,
+  Tokcookiessoldphr: [],
+  dailytotal: 0,
+  getNumberOfRandomcustomersphr: function () {
+    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min)
+  },
+
+  calculatecookiessoldphr: function() {
+    // method? calculate and store the simulated amounts of cookies purchased
+    // each hour at each location
+    
+    // using average cookies ourchased
+    // and the random number of customers 
+    for (let i = 0; i < hour.length; i++) {
+
+      let tokyocustomers = this.getNumberOfRandomcustomersphr();
+
+      let cookiessoldthishour = Math.ceil(tokyocustomers * this.avg); 
+ // console.log(cookiessoldthishour);
+  this.Tokcookiessoldphr.push(cookiessoldthishour);
+
+  // calculating the sum of these hourly totals
+  this.dailytotal += cookiessoldthishour
+    }
+    console.log(this.Tokcookiessoldphr);
+  },
+  render: function() {
+    this.calculatecookiessoldphr();
+   
+    let salescontainer = document.getElementById('seattlesales'); 
+   
+  
+    let ulElement = document.createElement('ul');
+    console.log(salescontainer);
+   
+    salescontainer.appendChild(ulElement);
+  
+    for (let i = 0; i < hour.length; i++) {
+  
+   //create
+    let liElement = document.createElement('li');
+  // content
+  liElement.textContent = `${hour[i]}; ${this.Tokcookiessoldphr[i]} cookies`;
+  
+  // append
+  ulElement.appendChild(liElement);
+   }
+   // create
+   //content
+   // append it to dom
+   let totallielement = document.createElement('li');
+   totallielement.textContent = `Total; ${this.dailytotal} cookies`
+   ulElement.appendChild(totallielement);
+   }
+  }
+  
+ tokyostore.calculatecookiessoldphr();
+tokyostore.render();
+console.log(tokyostore.getNumberOfRandomcustomersphr());
 // console.log(tokyostore.getNumberOfRandomcustomersphr());
 
 // let dubaiStore = {
