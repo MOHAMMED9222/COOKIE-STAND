@@ -271,7 +271,7 @@ let dubaiStore = {
  render: function() {
   this.calculatecookiessoldphr();
  
-  let salescontainer = document.getElementById('dubai'); 
+  let salescontainer = document.getElementById('dubaisales'); 
   let h2element = document.createElement('h2');
 
   h2element.textContent = 'dubaisales'
@@ -305,32 +305,89 @@ ulElement.appendChild(liElement);
 dubaiStore.calculatecookiessoldphr();
 dubaiStore.render();
 
-// let parisstore = {
-//   min: 20,
-//   max: 38,
-//   avg: 2.3,
-//   getNumberOfRandomcustomersphr() {
-//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min)
-//   }
-// }
-// console.log(dubaiStore.getNumberOfRandomcustomersphr());
+let parrisstore = {
+  NameLoc: 'Paris',
+  min: 20,
+  max: 38,
+  avg: 2.3,
+ parriscookiesphr: [],
+  dailytotal: 0,
 
-// let limastore = {
-//   min: 2,
-//   max: 16,
-//   avg: 4.6,
-//   getNumberOfRandomcustomersphr() {
-//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min)
-//   }
-// }
-// console.log(limastore.getNumberOfRandomcustomersphr());
+  getNumberOfRandomcustomersphr: function () {
+    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+  },
 
+  calculatecookiessoldphr: function() {
+  // method? calculate and store the simulated amounts of cookies purchased
+  // each hour at each location
+  
+  // using average cookies ourchased
+  // and the random number of customers
+  for (let i = 0; i < hour.length; i++) {
+    
+    let parriscustomers = this.getNumberOfRandomcustomersphr();
+    //console.log(seattcustomers)
+    
+    let cookiessoldthishour = Math.ceil(parriscustomers * this.avg); 
+   // console.log(cookiessoldthishour);
+    this.parriscookiesphr.push(cookiessoldthishour);
 
+    // calculating the sum of these hourly totals
+    this.dailytotal += cookiessoldthishour
+    
 
+  //let seacookieavg = Math.ceil (seattcustomers * this.avg)
+  //console.log(seaAvgphr)
+  
+  //this.SEAcookiessoldphr.push(seaAvgphr)
 
+  // calculating the sum of these hourly rates
+  // x = x +1 
+  //x += 1 
+  //this.dailytotal += seacookieavg;
 
+  //console.log(this.SEAcookiessoldphr);
+  //     console.log(calculatecookiessoldphr[i]);
+  //    let numbersofcustomers = this.getNumberOfRandomcustomersphr()
+  }
+  console.log(this.parriscookiesphr);
+ },
+ render: function() {
+  this.calculatecookiessoldphr();
+ 
+  let salescontainer = document.getElementById('parrissales'); 
+  let h2element = document.createElement('h2');
 
+  h2element.textContent = 'parrissales'
+salescontainer.appendChild(h2element)
+ 
 
+  let ulElement = document.createElement('ul');
+  console.log(salescontainer);
+ 
+  salescontainer.appendChild(ulElement);
+
+  for (let i = 0; i < hour.length; i++) {
+
+ //create
+  let liElement = document.createElement('li');
+// content
+liElement.textContent = `${hour[i]}; ${this.parriscookiesphr[i]} cookies`;
+
+// append
+ulElement.appendChild(liElement);
+ }
+ // create
+ //content
+ // append it to dom
+ let totallielement = document.createElement('li');
+ totallielement.textContent = `Total; ${this.dailytotal} cookies`
+ ulElement.appendChild(totallielement);
+ }
+}
+
+parrisstore.calculatecookiessoldphr();
+parrisstore.render();
 
 
 
