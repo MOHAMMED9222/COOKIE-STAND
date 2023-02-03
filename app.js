@@ -502,7 +502,3 @@ limastore.render();
 // totallielement = `Total: ${this.dailytotal} cookies`;
 // ulElement.append(totallielement)
 // },
-
-
-
-
