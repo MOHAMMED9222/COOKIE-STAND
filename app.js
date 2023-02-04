@@ -1,7 +1,7 @@
 'use strict'
 
 //let location = document.getElementById('Location');
-// let profileContainer = document.getElementById('seattlesales'); 
+//let profileContainer = document.getElementById('seattlesales'); 
 // console.log(profileContainer);
 
 
@@ -17,6 +17,9 @@
 
 
 let hour = ['6 a.m.', '7 a.m.', '8 a.m.', '9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m', '6 p.m.', '7 p.m.'];
+
+let allstores = [];
+
 // object literal
 let seattlestore = {
   NameLoc: 'Seattle',
@@ -34,7 +37,7 @@ let seattlestore = {
   // method? calculate and store the simulated amounts of cookies purchased
   // each hour at each location
   
-  // using average cookies ourchased
+  // using average cookies purchased
   // and the random number of customers
   for (let i = 0; i < hour.length; i++) {
     
@@ -181,7 +184,7 @@ let tokyostore = {
   //     console.log(calculatecookiessoldphr[i]);
   //    let numbersofcustomers = this.getNumberOfRandomcustomersphr()
   }
-  console.log(this. Tokcookiessoldphr);
+  console.log(this.Tokcookiessoldphr);
  },
  render: function() {
   this.calculatecookiessoldphr();
@@ -473,7 +476,7 @@ ulElement.appendChild(liElement);
 limastore.calculatecookiessoldphr();
 limastore.render();
 
-
+allstores.push(seattlestore, tokyostore, dubaistore, parrisstore, limastore);
 
 // render: function() {
 //   this.SEAcookiessoldphr();
@@ -502,3 +505,4 @@ limastore.render();
 // totallielement = `Total: ${this.dailytotal} cookies`;
 // ulElement.append(totallielement)
 // },
+
