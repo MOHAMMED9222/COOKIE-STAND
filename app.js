@@ -493,7 +493,7 @@ function tableHeader() {
   row1.appendChild(cityHead);
   for (let i = 0; i < hour.length; i++) {
     let thirdElement = document.createElement('th');
-    thirdElement.innerText =`${hourTotal[i]}`;
+    thirdElement.innerText =`${hour[i]}`;
     row1.appendChild(thirdElement);
   }
   let totalCities = document.createElement('th');
@@ -596,8 +596,8 @@ allstores.push(seattlestore, tokyostore, dubaistore, parrisstore, limastore);
 
 
   //seattlestore.getCookiesSold();
-  renderAll();
   tableHeader();
+  renderAll();
   tableFooter();
   
 // render: function() {
