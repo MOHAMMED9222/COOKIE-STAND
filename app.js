@@ -461,6 +461,11 @@
 
 // GLOBALS
 
+let cities = document.getElementById('cities');
+
+let cityTableBody = document.getElementById('tbody');
+let cityTableHead = document.getElementById('thead');
+let cityTableFoot = document.getElementById('tfoot');
 
 let hour = ['6 a.m.', '7 a.m.', '8 a.m.', '9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m', '6 p.m.', '7 p.m.'];
 
@@ -496,10 +501,15 @@ function tableHeader() {
   row1.appendChild(totalCities)
 }
 
+// function cityTableBody ()  {
+//   let tableBody = document.createElement('tbody')
+//   cityTableBody.appendChild(tableBody);
+// }
 
 function tableFooter() {
   let footer = document.createElement('tr')
   footer.innerText = 'Totals Per HR'
+  footer.id = 'tableFooter'
   cities.appendChild(footer)
   for (let i = 0; i < hourTotal.length; i++) {
     let thirdElement = document.createElement('th');
@@ -549,7 +559,8 @@ City.prototype.getCookiesSold = function () {
   }
 }
   City.prototype.render = function () {
-    let row2 = document.createElement('tr')
+    let row2
+     = document.createElement('tr')
     cities.appendChild(row2);
     let nameofCity = document.createElement('td')
     nameofCity.innerText = this.loc;
@@ -582,9 +593,6 @@ allstores.push(seattlestore, tokyostore, dubaistore, parrisstore, limastore);
 
 // DOM WINDOWS
 
-let cities = document.getElementById('cities');
-
-let cityTableBody = document.getElementById('tbody');
 
 
   //seattlestore.getCookiesSold();
