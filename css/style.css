@@ -3,18 +3,18 @@
 }
 
 header {
-  background-color: lightcyan;
+  background-color: pink;
 }
 
 body {
-  background-color: rgb(243, 252, 252);
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color:saddlebrown;
+  font-family: Georgia,'Times New Roman', Times, serif;
 }
 
 h1 {
   font-size: 3rem;
   padding: 1rem;
-  color:  rgb(112, 159, 165);
+  color: salmon;
   border-bottom: 10px double rgb(112, 159, 165);
 }
 
@@ -24,20 +24,20 @@ main {
 }
 
 article {
-  border: 1px solid rgb(112, 159, 165);
+  border: 1px solid teal(112, 159, 165);
   padding: 1rem;
   margin: 1rem;
 }
 
 h2 {
-  color: rgb(112, 159, 165);
+  color: teal(112, 159, 165);
   font-size: 1.2rem;
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
 h3 {
-  color: rgb(112, 159, 165);
+  color: teal(112, 159, 165);
   font-size: 2rem;
   margin-bottom: 1rem;
 }
@@ -57,12 +57,12 @@ footer {
 }
 
 a {
-  color: rgb(112, 159, 165);
+  color: salmon(112, 159, 165);
 }
 
 /* Table styles */
 table, td, th {
-  border: 1px solid rgb(112, 159, 165);
+  border: 1px solid salmon(112, 159, 165);
 }
 table {
   margin: 1rem;
@@ -75,4 +75,18 @@ th {
 }
 tfoot {
   background-color: rgba(112, 159, 165, .1);
+}
+
+form {
+  display: flex;
+  border: 1px solid salmon;
+  justify-content: center;
+
+
+}
+
+fieldset {
+  display: flex;
+  border: 2px solid teal;
+
 }
