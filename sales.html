@@ -7,9 +7,26 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Document</title>
 </head>
-<body>
+<body><main>
   <table id="cities"></table>
+</main>
+
+  <form id="cookiesform">
+  <fieldset>
+    <legend>COOKIE ESTIMATOR</legend>
+    <label for="cityName">CITY NAME</label>
+    <input type="text" name="cityName" id="cityName">
+    <label for="minCustomer">MIN CUSTOMER</label>
+    <input type="number" name="minCustomer" id="minCustomer">
+    <label for="maxCustomer">MAX CUSTOMER</label>
+    <input type="number" name="maxCustomer" id="maxCustomer">
+    <label for="avgCookie">AVG COOKIE</label>
+    <input type="number" step="0.01" id="avgCookie" name="avgCookie"
+  </fieldset>
+  <button type="submit">Submit</button>
+</form>
+  <footer>
+  </footer>
   <script src="app.js"></script>
-  <footer></footer>
 </body>
 </html>
