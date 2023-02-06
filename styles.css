@@ -6,6 +6,7 @@ header {
   background-color:teal;
   display: flex;
   justify-content: center;
+  width: auto;
 }
 nav {
   display: flex;
@@ -13,7 +14,7 @@ nav {
   justify-content: space-between;
   flex-wrap: nowrap;
   flex-direction: row; 
-  width: 906px;
+  width: auto;
   margin: auto;
   color: turquoise;
 }
@@ -23,7 +24,7 @@ ul {
   justify-content: space-around;
   flex-wrap: nowrap;
 align-items: flex-start;
-width: 850px;
+width: 800px;
 
   
 }
@@ -51,7 +52,7 @@ main {
 }
 main a {
   display: flex;
-  color: midnightblue;
+  color: pink;
   background-color: black;
   padding: 14px;
   border: 10px;
@@ -69,14 +70,7 @@ main img {
 footer {
   background-color: pink;
   height: 50px;
-  width: 1260px;
-}
-
-
-
-footer {
-  width: 960px;
-  margin: auto;
+  width: auto;
 }
 
 article {
@@ -102,11 +96,11 @@ li a {
 
 } 
  li a:hover {
-  background-color: black;
+  background-color: sandybrown;
 
  }
 a img {
-color: black;
+color: palevioletred;
  }
  
  body {
@@ -143,4 +137,11 @@ div {
 #hero {
   height: 480px;
   width: 960px;
+}
+
+#IG {
+  display: flex;
+  justify-content: center;
+ 
+  align-items: flex-end;
 }
